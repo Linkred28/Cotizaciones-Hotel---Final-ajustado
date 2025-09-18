@@ -22,7 +22,7 @@ interface ProposalSelectorProps {
 const ProposalSelector: React.FC<ProposalSelectorProps> = ({ proposals, selectedProposalId, onSelectProposal }) => (
     <nav className="bg-white-smoke py-6 sticky top-0 z-10 shadow-md">
         <div className="container mx-auto max-w-7xl px-4">
-            <div className="flex flex-nowrap md:justify-center gap-4 md:gap-6 overflow-x-auto hide-scrollbar pb-2">
+            <div className="flex flex-nowrap items-center md:justify-center gap-4 md:gap-6 overflow-x-auto hide-scrollbar py-4">
                 {proposals.map(proposal => (
                     <button
                         key={proposal.id}
@@ -68,7 +68,7 @@ const Footer: React.FC = () => (
     <footer className="bg-sapphire-dark text-white-smoke py-12 mt-16">
         <div className="container mx-auto max-w-5xl text-center px-4">
             <p className="text-2xl md:text-3xl font-light italic text-pearl-gray">
-                “De la operación tradicional a la transformación digital.”
+                “European Life Style Executive Suites & Gallery: de la operación tradicional a la transformación digital.”
             </p>
         </div>
     </footer>

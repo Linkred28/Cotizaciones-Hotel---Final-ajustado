@@ -12,6 +12,8 @@ export default defineConfig(({ mode }) => {
       },
       resolve: {
         alias: {
+          // FIX: The use of `process.cwd()` caused a TypeScript error. 
+          // Replaced with `__dirname`, which is available in the Vite config's execution context and resolves the issue.
           '@': path.resolve(__dirname, '.'),
         }
       }
