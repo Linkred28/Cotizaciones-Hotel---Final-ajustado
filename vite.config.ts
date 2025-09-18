@@ -12,9 +12,9 @@ export default defineConfig(({ mode }) => {
       },
       resolve: {
         alias: {
-          // FIX: The use of `process.cwd()` caused a TypeScript error. 
-          // Replaced with `__dirname`, which is available in the Vite config's execution context and resolves the issue.
-          '@': path.resolve(__dirname, '.'),
+          // FIX: The name `__dirname` is not available in an ES module context.
+          // Replaced `__dirname` with `process.cwd()` to correctly resolve to the project root directory.
+          '@': path.resolve(process.cwd(), '.'),
         }
       }
     };
