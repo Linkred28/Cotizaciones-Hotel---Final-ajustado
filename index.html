@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Presentación de Cotizaciones Estratégicas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'sapphire-dark': '#0A2540',
+              'emerald-sober': '#1C6758',
+              'white-smoke': '#F8F9FA',
+              'pearl-gray': '#D9D9D9',
+              'copper-metallic': '#B87333',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .header-animated-bg {
+        background: linear-gradient(-45deg, #0A2540, #10355a, #0A2540);
+        background-size: 200% 200%;
+        animation: gradient-flow 15s ease-in-out infinite;
+      }
+
+      @keyframes gradient-flow {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .title-animated-text {
+        background-image: linear-gradient(
+          -70deg,
+          #D9D9D9 0%,
+          #F8F9FA 25%,
+          #B87333 50%,
+          #F8F9FA 75%,
+          #D9D9D9 100%
+        );
+        background-size: 200% auto;
+        color: #000;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: text-shine 10s linear infinite alternate;
+      }
+
+      @keyframes text-shine {
+        to {
+          background-position: 200% center;
+        }
+      }
+      
+      @keyframes fade-in {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .animate-fade-in {
+        animation: fade-in 0.5s ease-in-out;
+      }
+
+      /* Scroll-triggered animation */
+      .fade-in-section {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .fade-in-section.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      
+      @keyframes ai-pulse {
+        0%, 100% {
+          transform: scale(1);
+          filter: drop-shadow(0 0 2px #B87333);
+        }
+        50% {
+          transform: scale(1.1);
+          filter: drop-shadow(0 0 5px #B87333);
+        }
+      }
+
+      .animate-ai-pulse {
+        animation: ai-pulse 2s ease-in-out infinite;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/"
+  }
+}
+</script>
+</head>
+  <body class="bg-white-smoke">
+    <div id="root"></div>
+    <script type="module" src="/main.tsx"></script>
+</body>
+</html>
